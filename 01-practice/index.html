@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>컴포넌트 만들기 학습용</title>
+    <script
+      src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script type="module" src="./src/main.js"></script>
+
+    <style>
+      #container {
+        display: flex;
+        flex-flow: row;
+        block-size: 50vh;
+        border: 1px solid black;
+      }
+
+      .reply {
+        display: flex;
+        inline-size: 50%;
+        block-size: 50%;
+        border: 3px solid pink;
+        border-radius: 40px;
+        font-size: 24px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .profile {
+        align-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="container"></main>
+  </body>
+</html>
