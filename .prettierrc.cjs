@@ -1,0 +1,5 @@
+module.exrports = {
+  arrowParens: "always",
+  tabWidth: 2,
+  printWidth: 100,
+};
