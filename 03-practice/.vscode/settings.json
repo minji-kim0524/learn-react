@@ -1,0 +1,29 @@
+{
+  
+  // --------------------------------------------------------------------------
+  // Emmet 설정: React에서 Emmet 사용 가능하도록 언어 설정
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  
+  // --------------------------------------------------------------------------
+  // Path Intellisense 설정
+  
+  // 기본 경로 자동완성 비활성화 (Path Intellisense만 사용)
+  "typescript.suggest.paths": false,
+  "javascript.suggest.paths": false,
+
+  // import 시 확장자까지 자동완성 설정
+  "path-intellisense.extensionOnImport": false,
+  // 숨김 파일도 자동완성 설정
+  "path-intellisense.showHiddenFiles": true,
+  // 폴더 뒤에 슬래시(/) 자동 추가 설정
+  "path-intellisense.autoSlashAfterDirectory": false,
+  // 절대경로를 워크스페이스 기준으로 설정
+  "path-intellisense.absolutePathToWorkspace": true,
+  // jsconfig/tsconfig `baseUrl`, `paths`를 사용 설정
+  "path-intellisense.ignoreTsConfigBaseUrl": false, 
+
+}
