@@ -1,0 +1,10 @@
+@reference 'tailwindcss';
+
+.button {
+  @apply cursor-pointer;
+  @apply grid place-content-center;
+  @apply w-max py-1.5 px-3 bg-slate-800 text-white rounded;
+  @apply hover:bg-slate-950;
+  @apply active:scale-98;
+  @apply focus:outline-0 focus-visible:ring-2 ring-blue-500;
+}

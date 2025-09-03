@@ -1,0 +1,54 @@
+body {
+  --hue: 340;
+  --color: hsl(var(--hue) 96% 58%);
+  --background-color: hsl(240 33% 1%);
+
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-color);
+  color: var(--color);
+  font:
+    1rem/1.5 'Spoqa Han Sans Neo',
+    sans-serif;
+}
+
+.logo {
+  --top: 7dvh;
+  --size: 5dvh;
+
+  position: fixed;
+  top: var(--top);
+  left: 50%;
+  translate: -50% 0;
+
+  block-size: var(--size);
+  inline-size: var(--size);
+
+  animation: rotate 20s linear infinite;
+}
+
+.output {
+  user-select: none;
+  cursor: inherit;
+  font-size: 30vh;
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 100;
+  line-height: 1;
+
+  &.is-animate {
+    animation: wiggle 600ms infinite alternate;
+  }
+}
+
+.shortcut-info {
+  --bottom: 7vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: var(--bottom);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
