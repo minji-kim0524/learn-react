@@ -1,0 +1,802 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "김민수",
+      "username": "minsoo.kim",
+      "email": "minsoo.kim@example.com",
+      "address": {
+        "street": "강남대로",
+        "suite": "101호",
+        "city": "서울",
+        "zipcode": "06236",
+        "geo": {
+          "lat": "37.4979",
+          "lng": "127.0276"
+        }
+      },
+      "phone": "010-1234-5678",
+      "company": {
+        "name": "삼성전자",
+        "catchPhrase": "혁신적인 기술 선도",
+        "business": "미래를 창조하다"
+      }
+    },
+    {
+      "id": 2,
+      "name": "이영희",
+      "username": "younghee.lee",
+      "email": "younghee.lee@example.com",
+      "address": {
+        "street": "테헤란로",
+        "suite": "202호",
+        "city": "서울",
+        "zipcode": "06134",
+        "geo": {
+          "lat": "37.5056",
+          "lng": "127.0570"
+        }
+      },
+      "phone": "010-2345-6789",
+      "company": {
+        "name": "LG화학",
+        "catchPhrase": "지속가능한 에너지",
+        "business": "친환경 솔루션 제공"
+      }
+    },
+    {
+      "id": 3,
+      "name": "박지훈",
+      "username": "jihoon.park",
+      "email": "jihoon.park@example.com",
+      "address": {
+        "street": "중앙로",
+        "suite": "303호",
+        "city": "대전",
+        "zipcode": "35220",
+        "geo": {
+          "lat": "36.3504",
+          "lng": "127.3845"
+        }
+      },
+      "phone": "010-3456-7890",
+      "company": {
+        "name": "한화",
+        "catchPhrase": "함께하는 성장",
+        "business": "미래를 위한 투자"
+      }
+    },
+    {
+      "id": 4,
+      "name": "최수정",
+      "username": "sujeong.choi",
+      "email": "sujeong.choi@example.com",
+      "address": {
+        "street": "해운대로",
+        "suite": "404호",
+        "city": "부산",
+        "zipcode": "48094",
+        "geo": {
+          "lat": "35.1667",
+          "lng": "129.0726"
+        }
+      },
+      "phone": "010-4567-8901",
+      "company": {
+        "name": "롯데",
+        "catchPhrase": "더 나은 라이프",
+        "business": "고객 중심 서비스"
+      }
+    },
+    {
+      "id": 5,
+      "name": "정우성",
+      "username": "woosung.jung",
+      "email": "woosung.jung@example.com",
+      "address": {
+        "street": "명동길",
+        "suite": "505호",
+        "city": "서울",
+        "zipcode": "04537",
+        "geo": {
+          "lat": "37.5636",
+          "lng": "126.9820"
+        }
+      },
+      "phone": "010-5678-9012",
+      "company": {
+        "name": "CJ",
+        "catchPhrase": "생활 속의 행복",
+        "business": "문화와 식품 혁신"
+      }
+    },
+    {
+      "id": 6,
+      "name": "한지민",
+      "username": "jimin.han",
+      "email": "jimin.han@example.com",
+      "address": {
+        "street": "광복로",
+        "suite": "606호",
+        "city": "부산",
+        "zipcode": "48947",
+        "geo": {
+          "lat": "35.0988",
+          "lng": "129.0302"
+        }
+      },
+      "phone": "010-6789-0123",
+      "company": {
+        "name": "신세계",
+        "catchPhrase": "새로운 쇼핑 경험",
+        "business": "고객 만족 실현"
+      }
+    },
+    {
+      "id": 7,
+      "name": "오세훈",
+      "username": "sehun.oh",
+      "email": "sehun.oh@example.com",
+      "address": {
+        "street": "청계천로",
+        "suite": "707호",
+        "city": "서울",
+        "zipcode": "03189",
+        "geo": {
+          "lat": "37.5700",
+          "lng": "126.9770"
+        }
+      },
+      "phone": "010-7890-1234",
+      "company": {
+        "name": "SK텔레콤",
+        "catchPhrase": "연결의 힘",
+        "business": "최첨단 통신 서비스"
+      }
+    },
+    {
+      "id": 8,
+      "name": "윤아름",
+      "username": "areum.yoon",
+      "email": "areum.yoon@example.com",
+      "address": {
+        "street": "서면로",
+        "suite": "808호",
+        "city": "부산",
+        "zipcode": "61463",
+        "geo": {
+          "lat": "35.1576",
+          "lng": "129.0595"
+        }
+      },
+      "phone": "010-8901-2345",
+      "company": {
+        "name": "현대자동차",
+        "catchPhrase": "미래를 향한 이동",
+        "business": "혁신적 자동차 개발"
+      }
+    },
+    {
+      "id": 9,
+      "name": "장민호",
+      "username": "minho.jang",
+      "email": "minho.jang@example.com",
+      "address": {
+        "street": "수원로",
+        "suite": "909호",
+        "city": "수원",
+        "zipcode": "16260",
+        "geo": {
+          "lat": "37.2636",
+          "lng": "127.0286"
+        }
+      },
+      "phone": "010-9012-3456",
+      "company": {
+        "name": "네이버",
+        "catchPhrase": "정보의 중심",
+        "business": "스마트 플랫폼 제공"
+      }
+    },
+    {
+      "id": 10,
+      "name": "송지효",
+      "username": "jihyo.song",
+      "email": "jihyo.song@example.com",
+      "address": {
+        "street": "판교로",
+        "suite": "1010호",
+        "city": "성남",
+        "zipcode": "13529",
+        "geo": {
+          "lat": "37.3947",
+          "lng": "127.1107"
+        }
+      },
+      "phone": "010-0123-4567",
+      "company": {
+        "name": "카카오",
+        "catchPhrase": "소통의 혁신",
+        "business": "모바일 플랫폼 선도"
+      }
+    },
+    {
+      "id": 11,
+      "name": "백현진",
+      "username": "hyunjin.baek",
+      "email": "hyunjin.baek@example.com",
+      "address": {
+        "street": "동래로",
+        "suite": "1111호",
+        "city": "부산",
+        "zipcode": "47785",
+        "geo": {
+          "lat": "35.2052",
+          "lng": "129.0836"
+        }
+      },
+      "phone": "010-1234-5670",
+      "company": {
+        "name": "한진",
+        "catchPhrase": "물류 혁신",
+        "business": "글로벌 네트워크 구축"
+      }
+    },
+    {
+      "id": 12,
+      "name": "임다영",
+      "username": "dayoung.lim",
+      "email": "dayoung.lim@example.com",
+      "address": {
+        "street": "광명로",
+        "suite": "1212호",
+        "city": "광명",
+        "zipcode": "14304",
+        "geo": {
+          "lat": "37.4772",
+          "lng": "126.8666"
+        }
+      },
+      "phone": "010-2345-6701",
+      "company": {
+        "name": "포스코",
+        "catchPhrase": "강철의 미래",
+        "business": "첨단 소재 개발"
+      }
+    },
+    {
+      "id": 13,
+      "name": "노지훈",
+      "username": "jihoon.no",
+      "email": "jihoon.no@example.com",
+      "address": {
+        "street": "울산로",
+        "suite": "1313호",
+        "city": "울산",
+        "zipcode": "44787",
+        "geo": {
+          "lat": "35.5384",
+          "lng": "129.3114"
+        }
+      },
+      "phone": "010-3456-7012",
+      "company": {
+        "name": "현대중공업",
+        "catchPhrase": "산업의 혁신",
+        "business": "글로벌 조선 리더"
+      }
+    },
+    {
+      "id": 14,
+      "name": "서지수",
+      "username": "jisu.seo",
+      "email": "jisu.seo@example.com",
+      "address": {
+        "street": "송도로",
+        "suite": "1414호",
+        "city": "인천",
+        "zipcode": "21999",
+        "geo": {
+          "lat": "37.3826",
+          "lng": "126.6434"
+        }
+      },
+      "phone": "010-4567-0123",
+      "company": {
+        "name": "인천공항",
+        "catchPhrase": "세계로 가는 관문",
+        "business": "공항 서비스 혁신"
+      }
+    },
+    {
+      "id": 15,
+      "name": "황보경",
+      "username": "bokyung.hwang",
+      "email": "bokyung.hwang@example.com",
+      "address": {
+        "street": "경희로",
+        "suite": "1515호",
+        "city": "서울",
+        "zipcode": "02447",
+        "geo": {
+          "lat": "37.5982",
+          "lng": "127.0518"
+        }
+      },
+      "phone": "010-5678-1234",
+      "company": {
+        "name": "경희대",
+        "catchPhrase": "교육의 미래",
+        "business": "글로벌 인재 양성"
+      }
+    },
+    {
+      "id": 16,
+      "name": "신유진",
+      "username": "yujin.shin",
+      "email": "yujin.shin@example.com",
+      "address": {
+        "street": "분당로",
+        "suite": "1616호",
+        "city": "성남",
+        "zipcode": "13560",
+        "geo": {
+          "lat": "37.3851",
+          "lng": "127.1215"
+        }
+      },
+      "phone": "010-6789-2345",
+      "company": {
+        "name": "분당서울대병원",
+        "catchPhrase": "건강한 삶의 동반자",
+        "business": "첨단 의료 서비스"
+      }
+    },
+    {
+      "id": 17,
+      "name": "권민재",
+      "username": "minjae.kwon",
+      "email": "minjae.kwon@example.com",
+      "address": {
+        "street": "동탄대로",
+        "suite": "1717호",
+        "city": "화성",
+        "zipcode": "18469",
+        "geo": {
+          "lat": "37.2085",
+          "lng": "127.0736"
+        }
+      },
+      "phone": "010-7890-3456",
+      "company": {
+        "name": "동탄신도시",
+        "catchPhrase": "미래 도시 구현",
+        "business": "스마트 시티 구축"
+      }
+    },
+    {
+      "id": 18,
+      "name": "문지현",
+      "username": "jihyun.moon",
+      "email": "jihyun.moon@example.com",
+      "address": {
+        "street": "광주로",
+        "suite": "1818호",
+        "city": "광주",
+        "zipcode": "61475",
+        "geo": {
+          "lat": "35.1595",
+          "lng": "126.8526"
+        }
+      },
+      "phone": "010-8901-4567",
+      "company": {
+        "name": "광주은행",
+        "catchPhrase": "신뢰의 금융",
+        "business": "지역 경제 활성화"
+      }
+    },
+    {
+      "id": 19,
+      "name": "조현우",
+      "username": "hyunwoo.jo",
+      "email": "hyunwoo.jo@example.com",
+      "address": {
+        "street": "창원로",
+        "suite": "1919호",
+        "city": "창원",
+        "zipcode": "51430",
+        "geo": {
+          "lat": "35.2285",
+          "lng": "128.6811"
+        }
+      },
+      "phone": "010-9012-5678",
+      "company": {
+        "name": "창원산업단지",
+        "catchPhrase": "산업의 중심지",
+        "business": "첨단 제조업 발전"
+      }
+    },
+    {
+      "id": 20,
+      "name": "이하늘",
+      "username": "haneul.lee",
+      "email": "haneul.lee@example.com",
+      "address": {
+        "street": "제주로",
+        "suite": "2020호",
+        "city": "제주",
+        "zipcode": "63092",
+        "geo": {
+          "lat": "33.4996",
+          "lng": "126.5312"
+        }
+      },
+      "phone": "010-0123-6789",
+      "company": {
+        "name": "제주관광공사",
+        "catchPhrase": "아름다운 제주",
+        "business": "관광 산업 혁신"
+      }
+    }
+  ],
+  "posts": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "성공을 위한 첫걸음",
+      "body": "모든 성공은 작은 시작에서 비롯됩니다.\n포기하지 않고 꾸준히 나아가세요."
+    },
+    {
+      "userId": 2,
+      "id": 2,
+      "title": "도전의 의미",
+      "body": "도전은 성장의 기회를 제공합니다.\n두려움을 이겨내고 앞으로 나아가세요."
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "노력의 가치",
+      "body": "노력은 결코 배신하지 않습니다.\n매일 조금씩 나아지는 자신을 느껴보세요."
+    },
+    {
+      "userId": 3,
+      "id": 4,
+      "title": "배움의 즐거움",
+      "body": "새로운 것을 배우는 과정은 인생을 풍요롭게 합니다.\n끊임없이 배워나가세요."
+    },
+    {
+      "userId": 2,
+      "id": 5,
+      "title": "긍정적인 생각",
+      "body": "긍정적인 마음가짐이 어려움을 이겨내는 힘이 됩니다.\n항상 밝게 생각하세요."
+    },
+    {
+      "userId": 4,
+      "id": 6,
+      "title": "친절의 힘",
+      "body": "작은 친절이 큰 변화를 만듭니다.\n주변 사람들에게 따뜻하게 대해주세요."
+    },
+    {
+      "userId": 4,
+      "id": 7,
+      "title": "자신감의 중요성",
+      "body": "자신감은 모든 일의 시작입니다.\n스스로를 믿고 도전하세요."
+    },
+    {
+      "userId": 5,
+      "id": 8,
+      "title": "희망을 잃지 말자",
+      "body": "어려운 순간에도 희망을 잃지 마세요.\n언젠가 좋은 일이 찾아올 것입니다."
+    },
+    {
+      "userId": 2,
+      "id": 9,
+      "title": "성장의 과정",
+      "body": "성장은 시간이 걸립니다.\n조급해하지 말고 꾸준히 노력하세요."
+    },
+    {
+      "userId": 1,
+      "id": 10,
+      "title": "행복의 조건",
+      "body": "행복은 가까운 곳에 있습니다.\n작은 것에 감사하는 마음을 가지세요."
+    },
+    {
+      "userId": 3,
+      "id": 11,
+      "title": "사랑의 힘",
+      "body": "사랑은 모든 것을 변화시킵니다.\n주변 사람들에게 사랑을 표현하세요."
+    },
+    {
+      "userId": 6,
+      "id": 12,
+      "title": "실패에서 배우기",
+      "body": "실패는 성공의 밑거름입니다.\n실수에서 교훈을 얻으세요."
+    },
+    {
+      "userId": 7,
+      "id": 13,
+      "title": "시간의 소중함",
+      "body": "시간은 누구에게나 공평합니다.\n소중하게 사용하세요."
+    },
+    {
+      "userId": 7,
+      "id": 14,
+      "title": "목표 설정의 중요성",
+      "body": "명확한 목표가 있어야 성공할 수 있습니다.\n목표를 세우고 실천하세요."
+    },
+    {
+      "userId": 8,
+      "id": 15,
+      "title": "열정의 불꽃",
+      "body": "열정은 삶을 움직이는 원동력입니다.\n꿈을 향해 달려가세요."
+    },
+    {
+      "userId": 10,
+      "id": 16,
+      "title": "신뢰의 가치",
+      "body": "신뢰는 모든 관계의 시작입니다.\n상대방을 믿고 존중하세요."
+    },
+    {
+      "userId": 9,
+      "id": 17,
+      "title": "자기계발",
+      "body": "자기계발은 평생 해야 할 일입니다.\n항상 배우고 성장하세요."
+    },
+    {
+      "userId": 9,
+      "id": 18,
+      "title": "겸손함을 잃지 않기",
+      "body": "겸손은 인간관계의 기본입니다.\n항상 겸손하게 행동하세요."
+    },
+    {
+      "userId": 7,
+      "id": 19,
+      "title": "집중의 힘",
+      "body": "집중하면 더 좋은 결과를 얻을 수 있습니다.\n한 가지에 몰두해보세요."
+    },
+    {
+      "userId": 5,
+      "id": 20,
+      "title": "실천의 중요성",
+      "body": "생각만 하지 말고 실천하세요.\n행동이 변화를 만듭니다."
+    },
+    {
+      "userId": 6,
+      "id": 21,
+      "title": "유연한 사고",
+      "body": "유연한 사고가 문제 해결을 돕습니다.\n다양한 관점에서 생각하세요."
+    },
+    {
+      "userId": 3,
+      "id": 22,
+      "title": "책임감",
+      "body": "책임감 있는 행동이 신뢰를 만듭니다.\n자신의 행동에 책임을 지세요."
+    },
+    {
+      "userId": 4,
+      "id": 23,
+      "title": "즐거운 하루",
+      "body": "오늘도 즐거운 하루 보내세요.\n행복은 가까이에 있습니다."
+    },
+    {
+      "userId": 8,
+      "id": 24,
+      "title": "소통의 기술",
+      "body": "좋은 소통은 오해를 줄입니다.\n상대방의 말을 경청하세요."
+    }
+  ],
+  "comments": [
+    {
+      "postId": 1,
+      "id": 1,
+      "name": "노력과 인내의 가치",
+      "email": "kim01@example.com",
+      "body": "성공은 꾸준한 노력과 인내에서 비롯됩니다.\n항상 최선을 다하세요."
+    },
+    {
+      "postId": 1,
+      "id": 2,
+      "name": "새로운 시작",
+      "email": "lee02@example.com",
+      "body": "매일이 새로운 시작입니다.\n두려워하지 말고 도전하세요."
+    },
+    {
+      "postId": 2,
+      "id": 3,
+      "name": "함께하는 즐거움",
+      "email": "park03@example.com",
+      "body": "혼자보다는 함께할 때 더 큰 즐거움을 느낍니다.\n협력의 힘을 믿으세요."
+    },
+    {
+      "postId": 2,
+      "id": 4,
+      "name": "실수에서 배우기",
+      "email": "choi04@example.com",
+      "body": "실수는 성장의 기회입니다.\n실패를 두려워하지 마세요."
+    },
+    {
+      "postId": 3,
+      "id": 5,
+      "name": "긍정의 힘",
+      "email": "jung05@example.com",
+      "body": "긍정적인 생각이 삶을 바꿉니다.\n항상 밝게 생각하세요."
+    },
+    {
+      "postId": 3,
+      "id": 6,
+      "name": "작은 변화의 시작",
+      "email": "yoon06@example.com",
+      "body": "작은 변화가 큰 결과를 만듭니다.\n오늘부터 실천해보세요."
+    },
+    {
+      "postId": 2,
+      "id": 7,
+      "name": "친절의 의미",
+      "email": "jang07@example.com",
+      "body": "작은 친절이 큰 감동을 줍니다.\n주변 사람들에게 친절을 베푸세요."
+    },
+    {
+      "postId": 3,
+      "id": 8,
+      "name": "자신감 키우기",
+      "email": "lim08@example.com",
+      "body": "자신감을 가지면 무엇이든 할 수 있습니다.\n스스로를 믿으세요."
+    },
+    {
+      "postId": 4,
+      "id": 9,
+      "name": "도전의 가치",
+      "email": "shin09@example.com",
+      "body": "도전은 새로운 기회를 가져다줍니다.\n포기하지 마세요."
+    },
+    {
+      "postId": 4,
+      "id": 10,
+      "name": "행복의 조건",
+      "email": "kwon10@example.com",
+      "body": "행복은 마음에서 시작됩니다.\n작은 것에 감사하세요."
+    },
+    {
+      "postId": 5,
+      "id": 11,
+      "name": "꿈을 향한 한 걸음",
+      "email": "han11@example.com",
+      "body": "꿈을 이루기 위한 첫 걸음을 내딛으세요.\n지금이 바로 그 순간입니다."
+    },
+    {
+      "postId": 3,
+      "id": 12,
+      "name": "배움의 즐거움",
+      "email": "song12@example.com",
+      "body": "배움은 끝이 없습니다.\n새로운 것을 배우는 즐거움을 느끼세요."
+    },
+    {
+      "postId": 6,
+      "id": 13,
+      "name": "시간의 소중함",
+      "email": "oh13@example.com",
+      "body": "시간은 누구에게나 소중합니다.\n낭비하지 말고 알차게 보내세요."
+    },
+    {
+      "postId": 3,
+      "id": 14,
+      "name": "사랑의 힘",
+      "email": "kang14@example.com",
+      "body": "사랑은 모든 것을 변화시킵니다.\n주변 사람들에게 사랑을 표현하세요."
+    },
+    {
+      "postId": 2,
+      "id": 15,
+      "name": "희망을 잃지 않기",
+      "email": "hwang15@example.com",
+      "body": "어려운 순간에도 희망을 잃지 마세요.\n언젠가 좋은 일이 생길 거예요."
+    },
+    {
+      "postId": 7,
+      "id": 16,
+      "name": "성장의 과정",
+      "email": "an16@example.com",
+      "body": "성장은 꾸준한 노력에서 시작됩니다.\n계속해서 발전하세요."
+    },
+    {
+      "postId": 5,
+      "id": 17,
+      "name": "자유의 의미",
+      "email": "ryu17@example.com",
+      "body": "진정한 자유는 책임에서 나옵니다.\n스스로의 선택을 존중하세요."
+    },
+    {
+      "postId": 8,
+      "id": 18,
+      "name": "감사의 마음",
+      "email": "baek18@example.com",
+      "body": "감사하는 마음이 행복을 만듭니다.\n주변에 감사함을 표현하세요."
+    },
+    {
+      "postId": 9,
+      "id": 19,
+      "name": "용기의 시작",
+      "email": "jo19@example.com",
+      "body": "작은 용기가 큰 변화를 이끕니다.\n두려움 없이 도전하세요."
+    },
+    {
+      "postId": 10,
+      "id": 20,
+      "name": "집중의 힘",
+      "email": "moon20@example.com",
+      "body": "집중하면 더 좋은 결과를 얻을 수 있습니다.\n한 가지에 몰두해보세요."
+    },
+    {
+      "postId": 9,
+      "id": 21,
+      "name": "실천의 중요성",
+      "email": "seo21@example.com",
+      "body": "생각만 하지 말고 실천하세요.\n행동이 변화를 만듭니다."
+    },
+    {
+      "postId": 11,
+      "id": 22,
+      "name": "겸손의 가치",
+      "email": "min22@example.com",
+      "body": "겸손은 인간관계의 기본입니다.\n항상 겸손하게 행동하세요."
+    },
+    {
+      "postId": 10,
+      "id": 23,
+      "name": "열정의 불꽃",
+      "email": "jung23@example.com",
+      "body": "열정이 있다면 무엇이든 이룰 수 있습니다.\n꿈을 향해 나아가세요."
+    },
+    {
+      "postId": 12,
+      "id": 24,
+      "name": "신뢰의 중요성",
+      "email": "kim24@example.com",
+      "body": "신뢰는 모든 관계의 시작입니다.\n상대방을 믿으세요."
+    },
+    {
+      "postId": 13,
+      "id": 25,
+      "name": "자기계발",
+      "email": "lee25@example.com",
+      "body": "자기계발은 평생 해야 할 일입니다.\n항상 배우고 성장하세요."
+    },
+    {
+      "postId": 9,
+      "id": 26,
+      "name": "목표 설정",
+      "email": "park26@example.com",
+      "body": "명확한 목표가 있어야 성공할 수 있습니다.\n목표를 세우고 도전하세요."
+    },
+    {
+      "postId": 7,
+      "id": 27,
+      "name": "소통의 기술",
+      "email": "choi27@example.com",
+      "body": "좋은 소통은 오해를 줄입니다.\n상대방의 말을 경청하세요."
+    },
+    {
+      "postId": 10,
+      "id": 28,
+      "name": "유연한 사고",
+      "email": "jung28@example.com",
+      "body": "유연한 사고가 문제 해결을 돕습니다.\n다양한 관점에서 생각하세요."
+    },
+    {
+      "postId": 11,
+      "id": 29,
+      "name": "책임감",
+      "email": "yoon29@example.com",
+      "body": "책임감 있는 행동이 신뢰를 만듭니다.\n자신의 행동에 책임을 지세요."
+    },
+    {
+      "postId": 14,
+      "id": 30,
+      "name": "즐거운 하루",
+      "email": "jang30@example.com",
+      "body": "오늘도 즐거운 하루 보내세요.\n행복은 가까이에 있습니다."
+    }
+  ]
+}
