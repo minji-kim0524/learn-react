@@ -43,39 +43,31 @@ export default function App() {
 
   console.log({ loading, error, data })
 
-  let renderElement = null
-
-  if (loading) {
-    renderElement = (
-      <p
-        role="status"
-        aria-live="polite"
-        className="text-indigo-300 font-semibold text 2x1"
-      >
-        로딩 중...
-      </p>
-    )
-  } else if (error) {
-    renderElement = (
-      <p
-        role="alert"
-        aria-live="assertive"
-        className="text-red-600 font-semibold text-2x1"
-      >
-        오류 발생!! {error.message}
-      </p>
-    )
-  } else {
-    renderElement = (
-      <p>
-        앨범 타이틀: {data?.id ?? 0} | {data?.title ?? 'Album Title'}
-      </p>
-    )
-  }
-
   return (
     <LearnSection title="데이터 가져오기(fetching data)" showTitle>
-      {renderElement}
+      {loading && (
+        <p
+          role="status"
+          aria-live="polite"
+          className="text-indigo-300 font-semibold text 2x1"
+        >
+          로딩 중...
+        </p>
+      )}
+      {error && (
+        <p
+          role="alert"
+          aria-live="assertive"
+          className="text-red-600 font-semibold text-2x1"
+        >
+          오류 발생!! {error.message}
+        </p>
+      )}
+      {data && (
+        <p>
+          앨범 타이틀: {data?.id ?? 0} | {data?.title ?? 'Album Title'}
+        </p>
+      )}
       <div role="group" className="mt-5">
         <button
           type="button"
