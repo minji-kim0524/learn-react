@@ -1,0 +1,10 @@
+body {
+  overflow-y: scroll;
+  min-block-size: 100dvh;
+  margin: 0;
+}
+
+abbr[title] {
+  cursor: help;
+  text-decoration: none;
+}
