@@ -1,0 +1,15 @@
+body {
+  --hue: 340;
+  --color: hsl(var(--hue) 96% 58%);
+  --background-color: hsl(240 33% 1%);
+
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-color);
+  color: var(--color);
+  font:
+    1rem/1.5 'Spoqa Han Sans Neo',
+    sans-serif;
+}
