@@ -1,0 +1,5 @@
+@reference 'tailwindcss';
+
+.Status {
+  @apply text-xl mb-2;
+}

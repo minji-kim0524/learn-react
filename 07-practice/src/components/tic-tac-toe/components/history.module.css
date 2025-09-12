@@ -1,0 +1,11 @@
+@reference 'tailwindcss';
+
+.History {
+  @apply min-w-25;
+  @apply mt-8.5;
+}
+
+.HistoryList {
+  @apply flex flex-col gap-2;
+  @apply m-0 pl-0;
+}
