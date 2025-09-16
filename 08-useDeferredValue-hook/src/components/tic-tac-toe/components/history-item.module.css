@@ -1,0 +1,20 @@
+@reference 'tailwindcss';
+
+.HistoryListItem {
+  @apply list-[decimal-leading-zero];
+}
+
+.HistoryButton {
+  @apply relative cursor-pointer;
+  @apply disabled:cursor-not-allowed;
+  @apply border-0 rounded;
+  @apply py-[0.4em] px-[0.8em];
+  @apply bg-black text-white disabled:bg-slate-200 disabled:text-slate-600;
+  @apply focus:z-50 focus:outline-0;
+  @apply focus-visible:outline-2 outline-black outline-offset-2;
+  @apply transition-colors duration-200;
+
+  &:not(:disabled):active {
+    @apply scale-94;
+  }
+}

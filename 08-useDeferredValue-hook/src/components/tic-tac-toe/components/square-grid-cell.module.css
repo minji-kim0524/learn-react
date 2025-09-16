@@ -1,0 +1,17 @@
+@reference 'tailwindcss';
+
+.SquareGridCell {
+  @apply relative;
+  @apply cursor-pointer;
+  @apply flex items-center justify-center;
+  @apply size-20 p-0;
+  @apply bg-white text-3xl text-black;
+  @apply border-[0.1px] border-black;
+  @apply transition-colors duration-400 ease-out;
+  @apply focus:z-50 focus:outline-0 focus:bg-slate-100;
+  @apply focus-visible:outline-3 outline-black -outline-offset-3;
+
+  &[aria-disabled='true'] {
+    @apply cursor-not-allowed bg-slate-100;
+  }
+}

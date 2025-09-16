@@ -1,0 +1,75 @@
+@register "tailwindcss";
+
+@layer components {
+  /* dialog 요소에 대한 스타일 지정 */
+  dialog {
+    /* 트랜지션(애니메이션) 지속 시간 및 이징 커브 설정 */
+    --duration: 0.25s;
+    --easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* 트랜지션 시작 상태(닫힐 때 초기값) */
+    --start-opacity: 0;
+    --start-transform: scale(0.95) translateY(1rem);
+
+    /* 트랜지션 종료 상태(열릴 때 최종값) */
+    --end-opacity: 1;
+    --end-transform: scale(1) translateY(0);
+
+    /* dialog의 초기 상태: 닫힘(숨겨짐) 상태에서 적용 */
+    opacity: var(--start-opacity);
+    transform: var(--start-transform);
+
+    /* 트랜지션(애니메이션) 속성 지정 */
+    transition:
+      opacity var(--duration) var(--easing),
+      transform var(--duration) var(--easing),
+      /* overlay와 display 속성은 allow-discrete로 설정하여 불연속 애니메이션 허용 */
+        overlay var(--duration) var(--easing) allow-discrete,
+      display var(--duration) var(--easing) allow-discrete;
+
+    /* dialog가 열렸을 때(open 속성 있을 때) 적용되는 스타일 */
+    &:open {
+      opacity: var(--end-opacity);
+      transform: var(--end-transform);
+    }
+
+    /* 트랜지션의 시작값을 명확히 지정 (첫 렌더링 또는 상태 변화 시) */
+    @starting-style {
+      /* dialog가 닫힌 상태에서의 시작값 */
+      & {
+        opacity: var(--start-opacity);
+        transform: var(--start-transform);
+      }
+
+      /* dialog가 열린 상태로 변경될 때의 시작값 */
+      &:open {
+        opacity: var(--start-opacity);
+        transform: var(--start-transform);
+      }
+    }
+  }
+
+  /* dialog의 backdrop(배경 딤) 스타일 지정 */
+  dialog::backdrop {
+    background-color: transparent; /* 기본은 투명 */
+    transition:
+      /* display와 overlay에 대해 불연속 애니메이션 허용 (닫힐 때 자연스러운 처리) */
+      display var(--duration) allow-discrete,
+      overlay var(--duration) allow-discrete,
+      background-color var(--duration);
+  }
+
+  /* dialog가 열렸을 때의 backdrop 배경색 */
+  dialog:open::backdrop {
+    background-color: rgb(0 0 0 / 0.25);
+    backdrop-filter: blur(2px);
+  }
+
+  /* backdrop이 열릴 때의 트랜지션 시작값 지정 */
+  @starting-style {
+    dialog:open::backdrop {
+      /* 애니메이션이 항상 투명에서 시작됨 */
+      background-color: transparent;
+    }
+  }
+}

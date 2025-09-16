@@ -1,0 +1,7 @@
+@reference 'tailwindcss';
+
+.SquaresGrid {
+  @apply flex flex-wrap;
+  @apply size-61.5;
+  @apply border-3 border-black;
+}

@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 환경 변수 파일
+.env
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
+
+# VS Code
+# .vscode/
+
+# 로그 파일
+*.log
+
+# 빌드 결과물
+dist/
+build/
+out/
+
+# 임시 파일
+*.tmp
+*.swp
+
+# 테스트 커버리지
+coverage/
+
+# 기타
+.idea/
+*.sublime-workspace
+*.sublime-
