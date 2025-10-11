@@ -8,5 +8,3 @@
 @import './common/_base.css' layer(base);
 @import './common/_a11y.css' layer(utilities);
 @import './common/_animation.css' layer(utilities);
-@import './components/_button.css' layer(components);
-@import './components/_input.css' layer(components);
