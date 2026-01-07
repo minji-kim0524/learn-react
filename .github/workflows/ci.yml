@@ -23,6 +23,7 @@ jobs:
         node-version: 'latest'
 
     - name: Build
+      working-directory: 10-nookipedia
       run: |
         bun install
         bun run prod
