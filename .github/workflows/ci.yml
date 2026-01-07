@@ -16,8 +16,14 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 24.x
+        
+    - name: Install bun
+      uses: oven-sh/setup-bun@v1
+      with:
+        node-version: 'latest'
 
     - name: Build
       run: |
         bun install
+        bun test
         bunx webpack
