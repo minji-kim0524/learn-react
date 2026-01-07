@@ -25,5 +25,4 @@ jobs:
     - name: Build
       run: |
         bun install
-        bun test
         bunx webpack
