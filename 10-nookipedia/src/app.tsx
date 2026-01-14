@@ -5,12 +5,19 @@ import { CharList } from './@types/global'
 import Input from './components/Input'
 import Modal from './components/Modal'
 
+type CharacterInfo = {
+  image_url: string
+  name: string
+  quote?: string
+}
+
 const URL = import.meta.env.VITE_URL
 const API_KEY = import.meta.env.VITE_API_KEY
 
 export default function App() {
   const [data, setData] = useState<CharList[]>([])
   const [isOpen, setIsOpen] = useState(false)
+  const [selectedItem, setSelectedItem] = useState<CharacterInfo>()
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
 
@@ -37,9 +44,9 @@ export default function App() {
         },
       })
 
-      console.log(response)
       const responseData = await response.json()
       console.log(responseData)
+      console.log(responseData[0])
       setData(responseData)
     }
     get()
@@ -56,15 +63,15 @@ export default function App() {
           {isPlaying ? <Volume2 /> : <VolumeOff />}
         </button>
       </div>
-      {data.map((item) => (
+      {selectedItem && (
         <Modal
           open={isOpen}
-          image={item.image_url}
-          title={item.name}
-          description="캐릭터설명"
+          image={selectedItem.image_url}
+          title={selectedItem.name}
+          description={selectedItem.quote ?? ''}
           onClose={() => setIsOpen(false)}
         />
-      ))}
+      )}
       <img
         src="/footer_navi_logo.png"
         alt="로고"
@@ -78,7 +85,10 @@ export default function App() {
           <div className="flex flex-col items-center cursor-pointer">
             <button
               type="button"
-              onClick={() => setIsOpen(true)}
+              onClick={() => {
+                setSelectedItem(item)
+                setIsOpen(true)
+              }}
               className="bg-transparent border-0 cursor-pointer"
             >
               <img
