@@ -6,6 +6,7 @@
   "version": "1.2.0",
   "scripts": {
     "dev": "bunx --bun vite",
+    "build": "vite build",
     "prod": "bun vite build",
     "preview": "bun vite preview",
     "format:check": "prettier --check --cache \"src/**/*.{js,jsx,ts,tsx,json}\"",
