@@ -66,7 +66,7 @@ export default function App() {
         />
       ))}
       <img
-        src="/public/footer_navi_logo.png"
+        src="/footer_navi_logo.png"
         alt="로고"
         className="flex mx-auto mb-2"
       />
