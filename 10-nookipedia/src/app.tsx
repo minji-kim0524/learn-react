@@ -2,7 +2,6 @@ import audioFile from '/public/navi_song.mp3'
 import { useEffect, useRef, useState } from 'react'
 import { Volume2, VolumeOff } from 'lucide-react'
 import { CharList } from './@types/global'
-import Button from './components/Button'
 import Input from './components/Input'
 import Modal from './components/Modal'
 
