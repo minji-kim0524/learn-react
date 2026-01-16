@@ -45,20 +45,26 @@ export default function Modal({
   return (
     <dialog
       ref={dialogRef}
-      className="mx-auto my-auto border-0 pt-8 rounded-xl shadow-xl bg-white"
+      className="mx-auto my-auto border-0 pt-8 rounded-xl shadow-xl bg-white w-100 h-65 px-4"
     >
-      <button
-        type="button"
-        className="flex bg-transparent border-0 cursor-pointer justify-end"
-        onClick={onClose}
-      >
-        <X />
-      </button>
-      <div className="flex flex-row gap-4 w-100 h-50">
-        <img src={image} alt={title} className="w-20 h-20" />
-        <p className="flex flex-col">
-          <span>{title}</span>
-          <span>{description}</span>
+      <div className="flex justify-end">
+        <button
+          type="button"
+          className="flex bg-transparent border-0 cursor-pointer"
+          onClick={onClose}
+        >
+          <X />
+        </button>
+      </div>
+      <div className="flex flex-row items-center gap-7 px-2">
+        <img src={image} alt={title} className="w-20" />
+        <p className="flex flex-col gap-10 w-full">
+          <span className="font-bold text-3xl bg-black border-none rounded-4xl text-white py-2 text-center">
+            {title}
+          </span>
+          <span className="text-[1rem]">
+            {description ? description : `Hello, my name is ${title}`}
+          </span>
         </p>
       </div>
     </dialog>
