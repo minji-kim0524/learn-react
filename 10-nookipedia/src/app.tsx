@@ -23,6 +23,7 @@ export default function App() {
   const [query, setQuery] = useState('')
   const [filteredData, setFilteredData] = useState<CharacterInfo[]>([])
   const [isSearched, setIsSearched] = useState(false)
+  const [currentPage, setCurrentPage] = useState<number>(1)
 
   function handlePlayPause() {
     if (!audioRef.current) {
@@ -46,6 +47,7 @@ export default function App() {
     setFilteredData(searchedData)
     setIsSearched(true)
 
+    setCurrentPage(1)
     setQuery('')
   }
 
@@ -53,6 +55,7 @@ export default function App() {
     setQuery('')
     setFilteredData([])
     setIsSearched(false)
+    setCurrentPage(1)
     // setSelectedItem()
   }
 
@@ -71,8 +74,21 @@ export default function App() {
     get()
   }, [])
 
-  const responseData = isSearched ? filteredData : data
+  // 페이지네이션
+  const DATA_PER_PAGE = 75
+  const startIndex = (currentPage - 1) * DATA_PER_PAGE
+  const endIndex = startIndex + DATA_PER_PAGE
+
+  const pagedData = data.slice(startIndex, endIndex)
+
+  const responseData = isSearched ? filteredData : pagedData
   const noResponseData = isSearched && filteredData.length === 0
+
+  // 페이지네이션 번호 표시
+  const pageNumbers = Array.from(
+    { length: Math.ceil(data.length / DATA_PER_PAGE) },
+    (_, i) => i + 1
+  )
 
   return (
     <section className="p-2">
@@ -108,8 +124,8 @@ export default function App() {
           onChange={(e) => setQuery(e.target.value)}
           onSubmit={handleSearch}
         />
-        {/* <Button /> */}
       </div>
+      {/* 검색결과 없을 경우 */}
       {noResponseData && (
         <div className="flex flex-col items-center">
           <img
@@ -144,6 +160,20 @@ export default function App() {
             </button>
             <p className="text-center border-1 rounded-2xl px-2">{item.name}</p>
           </div>
+        ))}
+      </div>
+      {/* 페이지네이션 번호버튼 */}
+      <div className="flex gap-2 justify-center mt-7">
+        {pageNumbers.map((page) => (
+          <button
+            type="button"
+            onClick={() => setCurrentPage(page)}
+            className={`px-3 py-1 rounded-md border-none text-[18px] border
+        ${currentPage === page ? 'bg-black text-white' : 'bg-white text-black'}
+      `}
+          >
+            {page}
+          </button>
         ))}
       </div>
     </section>
