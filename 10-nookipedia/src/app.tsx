@@ -82,7 +82,7 @@ export default function App() {
       </div>
       <div className="flex flex-wrap gap-6 px-2">
         {data.map((item) => (
-          <div className="flex flex-col items-center cursor-pointer">
+          <div className="flex flex-col items-center cursor-pointer hover:scale-120 hover:transition-transform">
             <button
               type="button"
               onClick={() => {
@@ -96,7 +96,7 @@ export default function App() {
                 alt="사진"
                 width={60}
                 height={70}
-                className=""
+                className="border-none"
               />
             </button>
             <p className="text-center border-1 rounded-2xl px-2">{item.name}</p>
