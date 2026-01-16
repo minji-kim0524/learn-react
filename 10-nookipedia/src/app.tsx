@@ -43,7 +43,6 @@ export default function App() {
       v.name.toLowerCase().includes(query.toLowerCase())
     )
 
-    console.log(searchedData)
     setFilteredData(searchedData)
     setIsSearched(true)
 
@@ -67,14 +66,13 @@ export default function App() {
       })
 
       const responseData = await response.json()
-      console.log(responseData)
-      console.log(responseData[0])
       setData(responseData)
     }
     get()
   }, [])
 
   const responseData = isSearched ? filteredData : data
+  const noResponseData = isSearched && filteredData.length === 0
 
   return (
     <section className="p-2">
@@ -112,6 +110,19 @@ export default function App() {
         />
         {/* <Button /> */}
       </div>
+      {noResponseData && (
+        <div className="flex flex-col items-center">
+          <img
+            src="/noresult.jpg"
+            alt="검색결과없음"
+            width={250}
+            className="rounded-full"
+          />
+          <p className="font-medium">
+            검색결과가 없어요! 검색어를 다시 확인해주세요
+          </p>
+        </div>
+      )}
       <div className="flex flex-wrap gap-6 px-2">
         {responseData.map((item) => (
           <div className="flex flex-col items-center cursor-pointer hover:scale-120 hover:transition-transform">
