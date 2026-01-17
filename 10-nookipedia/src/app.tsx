@@ -1,6 +1,6 @@
 import audioFile from '/public/navi_song.mp3'
 import { useEffect, useRef, useState } from 'react'
-import { Volume2, VolumeOff } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Volume2, VolumeOff } from 'lucide-react'
 import { CharList } from './@types/global'
 import Input from './components/Input'
 import Modal from './components/Modal'
@@ -40,6 +40,11 @@ export default function App() {
   }
 
   function handleSearch() {
+    if (!query.trim()) {
+      alert('검색어를 입력해주세요')
+      return
+    }
+
     const searchedData = data.filter((v) =>
       v.name.toLowerCase().includes(query.toLowerCase())
     )
@@ -78,6 +83,7 @@ export default function App() {
   const DATA_PER_PAGE = 75
   const startIndex = (currentPage - 1) * DATA_PER_PAGE
   const endIndex = startIndex + DATA_PER_PAGE
+  const TOTAL_PAGES = Math.ceil(data.length / DATA_PER_PAGE)
 
   const pagedData = data.slice(startIndex, endIndex)
 
@@ -85,10 +91,16 @@ export default function App() {
   const noResponseData = isSearched && filteredData.length === 0
 
   // 페이지네이션 번호 표시
-  const pageNumbers = Array.from(
-    { length: Math.ceil(data.length / DATA_PER_PAGE) },
-    (_, i) => i + 1
-  )
+  const pageNumbers = Array.from({ length: TOTAL_PAGES }, (_, i) => i + 1)
+
+  // 이전, 다음 버튼
+  function handlePrevNextPage(condition: string) {
+    if (condition === 'prev') {
+      setCurrentPage(currentPage - 1)
+    } else {
+      setCurrentPage(currentPage + 1)
+    }
+  }
 
   return (
     <section className="p-2">
@@ -164,17 +176,35 @@ export default function App() {
       </div>
       {/* 페이지네이션 번호버튼 */}
       <div className="flex gap-2 justify-center mt-7">
+        <button
+          type="button"
+          className="border-none bg-transparent"
+          title="이전"
+          onClick={() => handlePrevNextPage('prev')}
+          disabled={currentPage === 1}
+        >
+          <ChevronLeft strokeWidth="3" />
+        </button>
         {pageNumbers.map((page) => (
           <button
             type="button"
             onClick={() => setCurrentPage(page)}
             className={`px-3 py-1 rounded-md border-none text-[18px] border
-        ${currentPage === page ? 'bg-black text-white' : 'bg-white text-black'}
-      `}
+            ${currentPage === page ? 'bg-black text-white' : 'bg-white text-black'}
+            `}
           >
             {page}
           </button>
         ))}
+        <button
+          type="button"
+          className="border-none bg-transparent"
+          title="다음"
+          onClick={() => handlePrevNextPage('next')}
+          disabled={currentPage === TOTAL_PAGES}
+        >
+          <ChevronRight strokeWidth="3" />
+        </button>
       </div>
     </section>
   )
