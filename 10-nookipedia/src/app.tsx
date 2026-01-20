@@ -132,7 +132,7 @@ export default function App() {
           src="/footer_navi_logo.png"
           alt="메인 로고"
           fetchPriority="high"
-          rel="preload"
+          loading="eager"
         />
       </button>
       <div className="flex flex-row gap-1 mb-2">
