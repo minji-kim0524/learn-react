@@ -128,7 +128,12 @@ export default function App() {
         onClick={handleBackHome}
         className="flex mx-auto mb-2 bg-transparent border-none"
       >
-        <img src="/footer_navi_logo.png" alt="메인 로고" fetchPriority="high" />
+        <img
+          src="/footer_navi_logo.png"
+          alt="메인 로고"
+          fetchPriority="high"
+          rel="preload"
+        />
       </button>
       <div className="flex flex-row gap-1 mb-2">
         <Input
