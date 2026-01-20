@@ -109,6 +109,7 @@ export default function App() {
           type="button"
           className="bg-transparent border-0"
           onClick={handlePlayPause}
+          aria-label={isPlaying ? '일시정지' : '재생'}
         >
           {isPlaying ? <Volume2 /> : <VolumeOff />}
         </button>
