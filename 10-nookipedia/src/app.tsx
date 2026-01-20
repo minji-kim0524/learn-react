@@ -129,7 +129,7 @@ export default function App() {
         className="flex mx-auto mb-2 bg-transparent border-none"
       >
         <img
-          src="/footer_navi_logo.png"
+          src="/footer_navi_logo.webp"
           alt="메인 로고"
           fetchPriority="high"
           // loading="eager"
