@@ -61,7 +61,6 @@ export default function App() {
     setFilteredData([])
     setIsSearched(false)
     setCurrentPage(1)
-    // setSelectedItem()
   }
 
   useEffect(() => {
@@ -132,7 +131,6 @@ export default function App() {
           src="/footer_navi_logo.webp"
           alt="메인 로고"
           fetchPriority="high"
-          // loading="eager"
         />
       </button>
       <div className="flex flex-row gap-1 mb-2">
@@ -159,7 +157,10 @@ export default function App() {
       )}
       <div className="flex flex-wrap gap-6 px-2">
         {responseData.map((item) => (
-          <div className="flex flex-col items-center cursor-pointer hover:scale-120 hover:transition-transform">
+          <div
+            key={item.image_url}
+            className="flex flex-col items-center cursor-pointer hover:scale-120 hover:transition-transform"
+          >
             <button
               type="button"
               onClick={() => {
@@ -170,10 +171,10 @@ export default function App() {
             >
               <img
                 src={item.image_url}
-                alt="사진"
-                width={60}
+                alt={item.name}
+                // width={60}
                 height={70}
-                className="border-none"
+                className="border-none object-contain"
               />
             </button>
             <p className="text-center border-1 rounded-2xl px-2">{item.name}</p>
@@ -191,9 +192,10 @@ export default function App() {
         >
           <ChevronLeft strokeWidth="3" />
         </button>
-        {pageNumbers.map((page) => (
+        {pageNumbers.map((page, index) => (
           <button
             type="button"
+            key={index}
             onClick={() => setCurrentPage(page)}
             className={`px-3 py-1 rounded-md border-none text-[18px] border
             ${currentPage === page ? 'bg-black text-white' : 'bg-white text-black'}
