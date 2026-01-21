@@ -130,7 +130,9 @@ export default function App() {
         <img
           src="/footer_navi_logo.webp"
           alt="메인 로고"
+          width={800}
           fetchPriority="high"
+          className="object-contain"
         />
       </button>
       <div className="flex flex-row gap-1 mb-2">
