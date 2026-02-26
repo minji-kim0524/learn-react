@@ -79,7 +79,7 @@ export default function App() {
   }, [])
 
   // 페이지네이션
-  const DATA_PER_PAGE = 75
+  const DATA_PER_PAGE = 64
   const startIndex = (currentPage - 1) * DATA_PER_PAGE
   const endIndex = startIndex + DATA_PER_PAGE
   const TOTAL_PAGES = Math.ceil(data.length / DATA_PER_PAGE)
@@ -157,11 +157,11 @@ export default function App() {
           </p>
         </div>
       )}
-      <div className="flex flex-wrap gap-6 px-2">
+      <div className="flex flex-wrap gap-6 px-20 justify-center">
         {responseData.map((item) => (
           <div
             key={item.image_url}
-            className="flex flex-col items-center cursor-pointer hover:scale-120 hover:transition-transform"
+            className="flex flex-col cursor-pointer hover:scale-120 hover:transition-transform border-1 w-30 p-2"
           >
             <button
               type="button"
@@ -169,7 +169,7 @@ export default function App() {
                 setSelectedItem(item)
                 setIsOpen(true)
               }}
-              className="bg-transparent border-0 cursor-pointer"
+              className="bg-transparent border-0 cursor-pointer py-0 px-0"
             >
               <img
                 src={item.image_url}
@@ -179,7 +179,7 @@ export default function App() {
                 className="border-none object-contain"
               />
             </button>
-            <p className="text-center border-1 rounded-2xl px-2">{item.name}</p>
+            <p className="text-center mt-2">{item.name}</p>
           </div>
         ))}
       </div>
