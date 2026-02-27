@@ -9,6 +9,7 @@ type CharacterInfo = {
   image_url: string
   name: string
   quote?: string
+  gender?: string
 }
 
 const URL = import.meta.env.VITE_URL
@@ -79,7 +80,7 @@ export default function App() {
   }, [])
 
   // 페이지네이션
-  const DATA_PER_PAGE = 64
+  const DATA_PER_PAGE = 35
   const startIndex = (currentPage - 1) * DATA_PER_PAGE
   const endIndex = startIndex + DATA_PER_PAGE
   const TOTAL_PAGES = Math.ceil(data.length / DATA_PER_PAGE)
@@ -102,7 +103,13 @@ export default function App() {
   }
 
   return (
-    <section className="p-2">
+    <section
+      className="p-2"
+      style={{
+        backgroundImage: `url('/bg-animal-crossing.jpg')`,
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <div className="flex justify-end">
         <button
           type="button"
@@ -130,7 +137,7 @@ export default function App() {
         <img
           src="/footer_navi_logo.webp"
           alt="메인 로고"
-          width={800}
+          width={600}
           fetchPriority="high"
           className="object-contain"
         />
@@ -161,8 +168,9 @@ export default function App() {
         {responseData.map((item) => (
           <div
             key={item.image_url}
-            className="flex flex-col cursor-pointer hover:scale-120 hover:transition-transform border-1 w-30 p-2"
+            className={`flex flex-row cursor-pointer hover:scale-120 hover:transition-transform border-3 border-white rounded-4xl ${item.gender === 'Female' ? 'bg-pink-100' : 'bg-blue-100'} w-40 p-2 justify-between`}
           >
+            <p className="text-center mt-2">{item.name}</p>
             <button
               type="button"
               onClick={() => {
@@ -179,7 +187,6 @@ export default function App() {
                 className="border-none object-contain"
               />
             </button>
-            <p className="text-center mt-2">{item.name}</p>
           </div>
         ))}
       </div>
