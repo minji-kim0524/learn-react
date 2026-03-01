@@ -168,17 +168,17 @@ export default function App() {
         {responseData.map((item) => (
           <div
             key={item.image_url}
-            className={`flex flex-row cursor-pointer hover:scale-120 hover:transition-transform border-3 border-white rounded-4xl ${item.gender === 'Female' ? 'bg-pink-100' : 'bg-blue-100'} w-40 p-2 justify-between`}
+            className={`flex cursor-pointer hover:scale-120 hover:transition-transform border-3 border-white rounded-4xl ${item.gender === 'Female' ? 'bg-pink-100' : 'bg-blue-100'} w-40 p-2`}
           >
-            <p className="text-center mt-2">{item.name}</p>
             <button
               type="button"
               onClick={() => {
                 setSelectedItem(item)
                 setIsOpen(true)
               }}
-              className="bg-transparent border-0 cursor-pointer py-0 px-0"
+              className="flex justify-between w-full bg-transparent border-0 cursor-pointer"
             >
+              <p className="text-center mt-2">{item.name}</p>
               <img
                 src={item.image_url}
                 alt={item.name}
