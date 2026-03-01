@@ -8,10 +8,6 @@ type InputProps = {
 } & React.InputHTMLAttributes<HTMLInputElement>
 
 export default function Input({ id, value, onChange, onSubmit }: InputProps) {
-  // function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-  //   e.preventDefault()
-  // }
-
   return (
     <form
       className="flex flex-row gap-2 mx-auto my-4"
@@ -29,10 +25,10 @@ export default function Input({ id, value, onChange, onSubmit }: InputProps) {
         value={value}
         onChange={onChange}
         placeholder="검색어를 입력해주세요"
-        className="border-1 rounded-sm p-2"
+        className="border-1 rounded-sm p-2 w-100"
       />
       <button type="submit" className="border-1 rounded-sm p-2">
-        Search
+        검색
       </button>
     </form>
   )
