@@ -9,6 +9,7 @@ type CharacterInfo = {
   image_url: string
   name: string
   quote?: string
+  gender?: string
 }
 
 const URL = import.meta.env.VITE_URL
@@ -79,7 +80,7 @@ export default function App() {
   }, [])
 
   // 페이지네이션
-  const DATA_PER_PAGE = 75
+  const DATA_PER_PAGE = 35
   const startIndex = (currentPage - 1) * DATA_PER_PAGE
   const endIndex = startIndex + DATA_PER_PAGE
   const TOTAL_PAGES = Math.ceil(data.length / DATA_PER_PAGE)
@@ -102,7 +103,13 @@ export default function App() {
   }
 
   return (
-    <section className="p-2">
+    <section
+      className="p-2"
+      style={{
+        backgroundImage: `url('/bg-animal-crossing.jpg')`,
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <div className="flex justify-end">
         <button
           type="button"
@@ -130,7 +137,7 @@ export default function App() {
         <img
           src="/footer_navi_logo.webp"
           alt="메인 로고"
-          width={800}
+          width={600}
           fetchPriority="high"
           className="object-contain"
         />
@@ -157,11 +164,11 @@ export default function App() {
           </p>
         </div>
       )}
-      <div className="flex flex-wrap gap-6 px-2">
+      <div className="flex flex-wrap gap-6 px-20 justify-center">
         {responseData.map((item) => (
           <div
             key={item.image_url}
-            className="flex flex-col items-center cursor-pointer hover:scale-120 hover:transition-transform"
+            className={`flex cursor-pointer hover:scale-120 hover:transition-transform border-3 border-white rounded-4xl ${item.gender === 'Female' ? 'bg-pink-100' : 'bg-blue-100'} w-40 p-2`}
           >
             <button
               type="button"
@@ -169,8 +176,9 @@ export default function App() {
                 setSelectedItem(item)
                 setIsOpen(true)
               }}
-              className="bg-transparent border-0 cursor-pointer"
+              className="flex justify-between w-full bg-transparent border-0 cursor-pointer"
             >
+              <p className="text-center mt-2">{item.name}</p>
               <img
                 src={item.image_url}
                 alt={item.name}
@@ -179,7 +187,6 @@ export default function App() {
                 className="border-none object-contain"
               />
             </button>
-            <p className="text-center border-1 rounded-2xl px-2">{item.name}</p>
           </div>
         ))}
       </div>

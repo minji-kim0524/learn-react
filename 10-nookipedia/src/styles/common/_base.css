@@ -8,3 +8,7 @@ abbr[title] {
   cursor: help;
   text-decoration: none;
 }
+
+p {
+  margin: 0;
+}
