@@ -2,6 +2,7 @@ import audioFile from '/public/navi_song.mp3'
 import { useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, Volume2, VolumeOff } from 'lucide-react'
 import { CharList } from './@types/global'
+import FilterButton from './components/FilterButton'
 import Input from './components/Input'
 import Modal from './components/Modal'
 
@@ -149,6 +150,10 @@ export default function App() {
           onChange={(e) => setQuery(e.target.value)}
           onSubmit={handleSearch}
         />
+      </div>
+      {/* 필터조건(생일)선택 */}
+      <div className="flex justify-center gap-1 mb-6">
+        <FilterButton />
       </div>
       {/* 검색결과 없을 경우 */}
       {noResponseData && (
