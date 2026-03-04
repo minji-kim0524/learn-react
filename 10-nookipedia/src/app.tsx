@@ -152,8 +152,24 @@ export default function App() {
         />
       </div>
       {/* 필터조건(생일)선택 */}
-      <div className="flex justify-center gap-1 mb-6">
-        <FilterButton />
+      <div className="flex flex-col items-center justify-center mb-6 gap-2">
+        <p className="font-bold text-[#614f34] text-2xl border-3 border-white bg-[#1de4ab] rounded-2xl py-1 px-4">
+          생일별
+        </p>
+        <div className="flex gap-2">
+          <FilterButton birthButton="1월" />
+          <FilterButton birthButton="2월" />
+          <FilterButton birthButton="3월" />
+          <FilterButton birthButton="4월" />
+          <FilterButton birthButton="5월" />
+          <FilterButton birthButton="6월" />
+          <FilterButton birthButton="7월" />
+          <FilterButton birthButton="8월" />
+          <FilterButton birthButton="9월" />
+          <FilterButton birthButton="10월" />
+          <FilterButton birthButton="11월" />
+          <FilterButton birthButton="12월" />
+        </div>
       </div>
       {/* 검색결과 없을 경우 */}
       {noResponseData && (
