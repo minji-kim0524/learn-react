@@ -1,18 +1,13 @@
-export default function FilterButton() {
+interface FilterButtonProps {
+  birthButton: string
+}
+
+export default function FilterButton({ birthButton }: FilterButtonProps) {
   return (
     <>
-      <button>1월</button>
-      <button>2월</button>
-      <button>3월</button>
-      <button>4월</button>
-      <button>5월</button>
-      <button>6월</button>
-      <button>7월</button>
-      <button>8월</button>
-      <button>9월</button>
-      <button>10월</button>
-      <button>11월</button>
-      <button>12월</button>
+      <button className="text-2xl font-semibold text-[#614f34] bg-white px-4 py-1 rounded-3xl border-0">
+        {birthButton}
+      </button>
     </>
   )
 }
