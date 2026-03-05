@@ -1,7 +1,8 @@
-import audioFile from '/public/navi_song.mp3'
+import audioFile from '/navi_song.mp3'
 import { useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, Volume2, VolumeOff } from 'lucide-react'
 import { CharList } from './@types/global'
+import FilterButton from './components/FilterButton'
 import Input from './components/Input'
 import Modal from './components/Modal'
 
@@ -149,6 +150,26 @@ export default function App() {
           onChange={(e) => setQuery(e.target.value)}
           onSubmit={handleSearch}
         />
+      </div>
+      {/* 필터조건(생일)선택 */}
+      <div className="flex flex-col items-center justify-center mb-6 gap-2">
+        <p className="font-bold text-[#614f34] text-2xl border-3 border-white bg-[#1de4ab] rounded-2xl py-1 px-4">
+          생일별
+        </p>
+        <div className="flex gap-2">
+          <FilterButton birthButton="1월" />
+          <FilterButton birthButton="2월" />
+          <FilterButton birthButton="3월" />
+          <FilterButton birthButton="4월" />
+          <FilterButton birthButton="5월" />
+          <FilterButton birthButton="6월" />
+          <FilterButton birthButton="7월" />
+          <FilterButton birthButton="8월" />
+          <FilterButton birthButton="9월" />
+          <FilterButton birthButton="10월" />
+          <FilterButton birthButton="11월" />
+          <FilterButton birthButton="12월" />
+        </div>
       </div>
       {/* 검색결과 없을 경우 */}
       {noResponseData && (
