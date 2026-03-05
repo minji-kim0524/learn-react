@@ -1,4 +1,4 @@
-import audioFile from '/public/navi_song.mp3'
+import audioFile from '/navi_song.mp3'
 import { useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, Volume2, VolumeOff } from 'lucide-react'
 import { CharList } from './@types/global'
