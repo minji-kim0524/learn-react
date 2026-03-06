@@ -27,6 +27,7 @@ export default function App() {
   const [isSearched, setIsSearched] = useState(false)
   const [currentPage, setCurrentPage] = useState<number>(1)
 
+  // 배경음악 재생 및 일시정지
   function handlePlayPause() {
     if (!audioRef.current) {
       audioRef.current = new Audio(audioFile)
@@ -41,6 +42,7 @@ export default function App() {
     setIsPlaying((prev) => !prev)
   }
 
+  // 검색
   function handleSearch() {
     if (!query.trim()) {
       alert('검색어를 입력해주세요')
@@ -58,6 +60,7 @@ export default function App() {
     setQuery('')
   }
 
+  // 메인로고 클릭시 홈으로 이동
   function handleBackHome() {
     setQuery('')
     setFilteredData([])
@@ -65,6 +68,12 @@ export default function App() {
     setCurrentPage(1)
   }
 
+  // 생일 월별 클릭시 해당 캐릭터 출력
+  function handleFilter() {
+    console.log('성별나와라 얍!')
+  }
+
+  // api 데이터 받아오기
   useEffect(() => {
     async function get() {
       const response = await fetch(URL, {
@@ -157,18 +166,18 @@ export default function App() {
           생일별
         </p>
         <div className="flex gap-2">
-          <FilterButton birthButton="1월" />
-          <FilterButton birthButton="2월" />
-          <FilterButton birthButton="3월" />
-          <FilterButton birthButton="4월" />
-          <FilterButton birthButton="5월" />
-          <FilterButton birthButton="6월" />
-          <FilterButton birthButton="7월" />
-          <FilterButton birthButton="8월" />
-          <FilterButton birthButton="9월" />
-          <FilterButton birthButton="10월" />
-          <FilterButton birthButton="11월" />
-          <FilterButton birthButton="12월" />
+          <FilterButton birthButton="1월" onClick={handleFilter} />
+          <FilterButton birthButton="2월" onClick={handleFilter} />
+          <FilterButton birthButton="3월" onClick={handleFilter} />
+          <FilterButton birthButton="4월" onClick={handleFilter} />
+          <FilterButton birthButton="5월" onClick={handleFilter} />
+          <FilterButton birthButton="6월" onClick={handleFilter} />
+          <FilterButton birthButton="7월" onClick={handleFilter} />
+          <FilterButton birthButton="8월" onClick={handleFilter} />
+          <FilterButton birthButton="9월" onClick={handleFilter} />
+          <FilterButton birthButton="10월" onClick={handleFilter} />
+          <FilterButton birthButton="11월" onClick={handleFilter} />
+          <FilterButton birthButton="12월" onClick={handleFilter} />
         </div>
       </div>
       {/* 검색결과 없을 경우 */}
