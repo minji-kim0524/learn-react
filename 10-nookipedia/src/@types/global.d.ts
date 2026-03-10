@@ -2,6 +2,7 @@ export interface CharList {
   name: string
   image_url: string
   gender: string
+  birthday_month: string
 }
 
 export interface CharacterInfo {
