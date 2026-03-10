@@ -1,17 +1,11 @@
 import audioFile from '/navi_song.mp3'
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, Volume2, VolumeOff } from 'lucide-react'
-import { CharList } from './@types/global'
+import { CharList, CharacterInfo } from './@types/global'
 import FilterButton from './components/FilterButton'
 import Input from './components/Input'
 import Modal from './components/Modal'
-
-type CharacterInfo = {
-  image_url: string
-  name: string
-  quote?: string
-  gender?: string
-}
+import { months } from './constants/months'
 
 const URL = import.meta.env.VITE_URL
 const API_KEY = import.meta.env.VITE_API_KEY
@@ -25,6 +19,7 @@ export default function App() {
   const [query, setQuery] = useState('')
   const [filteredData, setFilteredData] = useState<CharacterInfo[]>([])
   const [isSearched, setIsSearched] = useState(false)
+  const [isMonth, setIsMonth] = useState(false)
   const [currentPage, setCurrentPage] = useState<number>(1)
 
   // 배경음악 재생 및 일시정지
@@ -55,6 +50,7 @@ export default function App() {
 
     setFilteredData(searchedData)
     setIsSearched(true)
+    setIsMonth(false)
 
     setCurrentPage(1)
     setQuery('')
@@ -69,8 +65,17 @@ export default function App() {
   }
 
   // 생일 월별 클릭시 해당 캐릭터 출력
-  function handleFilter() {
-    console.log('성별나와라 얍!')
+  function handleFilter(e: React.MouseEvent<HTMLButtonElement>) {
+    const target = e.target as HTMLButtonElement
+    const selectedMonth = target.dataset.month
+
+    const result = data.filter(
+      (item) => item.birthday_month.toLowerCase() === selectedMonth
+    )
+
+    setFilteredData(result)
+    setIsSearched(false)
+    setIsMonth(true)
   }
 
   // api 데이터 받아오기
@@ -97,7 +102,7 @@ export default function App() {
 
   const pagedData = data.slice(startIndex, endIndex)
 
-  const responseData = isSearched ? filteredData : pagedData
+  const responseData = isSearched || isMonth ? filteredData : pagedData
   const noResponseData = isSearched && filteredData.length === 0
 
   // 페이지네이션 번호 표시
@@ -166,18 +171,14 @@ export default function App() {
           생일별
         </p>
         <div className="flex gap-2">
-          <FilterButton birthButton="1월" onClick={handleFilter} />
-          <FilterButton birthButton="2월" onClick={handleFilter} />
-          <FilterButton birthButton="3월" onClick={handleFilter} />
-          <FilterButton birthButton="4월" onClick={handleFilter} />
-          <FilterButton birthButton="5월" onClick={handleFilter} />
-          <FilterButton birthButton="6월" onClick={handleFilter} />
-          <FilterButton birthButton="7월" onClick={handleFilter} />
-          <FilterButton birthButton="8월" onClick={handleFilter} />
-          <FilterButton birthButton="9월" onClick={handleFilter} />
-          <FilterButton birthButton="10월" onClick={handleFilter} />
-          <FilterButton birthButton="11월" onClick={handleFilter} />
-          <FilterButton birthButton="12월" onClick={handleFilter} />
+          {months.map((month) => (
+            <FilterButton
+              birthButton={month.label}
+              onClick={handleFilter}
+              data-month={month.id}
+              key={month.id}
+            />
+          ))}
         </div>
       </div>
       {/* 검색결과 없을 경우 */}
@@ -194,6 +195,7 @@ export default function App() {
           </p>
         </div>
       )}
+      {/* 전체 데이터(기본) 출력*/}
       <div className="flex flex-wrap gap-6 px-20 justify-center">
         {responseData.map((item) => (
           <div
