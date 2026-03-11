@@ -11,15 +11,16 @@ const URL = import.meta.env.VITE_URL
 const API_KEY = import.meta.env.VITE_API_KEY
 
 export default function App() {
+  const audioRef = useRef<HTMLAudioElement | null>(null)
   const [data, setData] = useState<CharList[]>([])
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedItem, setSelectedItem] = useState<CharacterInfo>()
-  const audioRef = useRef<HTMLAudioElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [query, setQuery] = useState('')
-  const [filteredData, setFilteredData] = useState<CharacterInfo[]>([])
   const [isSearched, setIsSearched] = useState(false)
   const [isMonth, setIsMonth] = useState(false)
+  const [query, setQuery] = useState('')
+  const [selectedItem, setSelectedItem] = useState<CharacterInfo>()
+  const [filteredData, setFilteredData] = useState<CharacterInfo[]>([])
+  const [selectedMonth, setSelectedMonth] = useState<string | null>(null)
   const [currentPage, setCurrentPage] = useState<number>(1)
 
   // 배경음악 재생 및 일시정지
@@ -174,9 +175,13 @@ export default function App() {
           {months.map((month) => (
             <FilterButton
               birthButton={month.label}
-              onClick={handleFilter}
+              onClick={(e) => {
+                handleFilter(e)
+                setSelectedMonth(month.id)
+              }}
               data-month={month.id}
               key={month.id}
+              className={`shadow-lg hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 ${selectedMonth === month.id ? 'bg-[#1de4ab]' : 'bg-white'}`}
             />
           ))}
         </div>
