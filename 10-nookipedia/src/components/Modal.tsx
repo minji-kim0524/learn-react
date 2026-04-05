@@ -6,6 +6,7 @@ import {
   useRef,
 } from 'react'
 import { X } from 'lucide-react'
+import Button from './Button'
 
 type DialogProps = PropsWithChildren<{
   open?: boolean
@@ -45,7 +46,7 @@ export default function Modal({
   return (
     <dialog
       ref={dialogRef}
-      className="mx-auto my-auto border-0 pt-8 rounded-xl shadow-xl bg-white w-100 h-65 px-4"
+      className="mx-auto border-0 pt-8 rounded-xl shadow-xl bg-white w-100 h-65 px-4"
     >
       <div className="flex justify-end">
         <button
@@ -66,6 +67,10 @@ export default function Modal({
             {description ? description : `Hello, my name is ${title}`}
           </span>
         </p>
+      </div>
+      <div className="flex gap-10 justify-center">
+        <Button button1="프로필로 선택" />
+        <Button button1="취소" />
       </div>
     </dialog>
   )
