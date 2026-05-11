@@ -1,17 +1,22 @@
 import audioFile from '/navi_song.mp3'
 import React, { useEffect, useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight, Volume2, VolumeOff } from 'lucide-react'
+import { ChevronLeft, ChevronRight, LogOut, Volume2, VolumeOff } from 'lucide-react'
+import type { Session } from '@supabase/supabase-js'
 import { CharList, CharacterInfo } from './@types/global'
 import FilterButton from './components/FilterButton'
 import Input from './components/Input'
 import Modal from './components/Modal'
 import { months } from './constants/months'
+import { supabase } from './lib/supabase'
+import AuthPage from './pages/AuthPage'
 
 const URL = import.meta.env.VITE_URL
 const API_KEY = import.meta.env.VITE_API_KEY
 
 export default function App() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const [session, setSession] = useState<Session | null>(null)
+  const [authLoading, setAuthLoading] = useState(true)
   const [data, setData] = useState<CharList[]>([])
   const [isOpen, setIsOpen] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -22,6 +27,26 @@ export default function App() {
   const [filteredData, setFilteredData] = useState<CharacterInfo[]>([])
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null)
   const [currentPage, setCurrentPage] = useState<number>(1)
+
+  // 세션 초기화 및 auth 상태 감지
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+      setAuthLoading(false)
+    })
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
+
+  async function handleLogout() {
+    await supabase.auth.signOut()
+  }
 
   // 배경음악 재생 및 일시정지
   function handlePlayPause() {
@@ -118,6 +143,27 @@ export default function App() {
     }
   }
 
+  if (authLoading) {
+    return (
+      <div
+        className="min-h-screen flex items-center justify-center"
+        style={{
+          backgroundImage: `url('/bg-animal-crossing.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <p className="text-[#614f34] font-bold text-xl bg-white/80 px-6 py-3 rounded-2xl">
+          로딩 중...
+        </p>
+      </div>
+    )
+  }
+
+  if (!session) {
+    return <AuthPage />
+  }
+
   return (
     <section
       className="p-2"
@@ -126,7 +172,7 @@ export default function App() {
         backgroundAttachment: 'fixed',
       }}
     >
-      <div className="flex justify-end">
+      <div className="flex justify-end gap-2">
         <button
           type="button"
           className="bg-transparent border-0"
@@ -134,6 +180,15 @@ export default function App() {
           aria-label={isPlaying ? '일시정지' : '재생'}
         >
           {isPlaying ? <Volume2 /> : <VolumeOff />}
+        </button>
+        <button
+          type="button"
+          className="bg-transparent border-0 flex items-center gap-1 text-[#614f34] font-semibold text-sm hover:opacity-70 transition-opacity"
+          onClick={handleLogout}
+          aria-label="로그아웃"
+        >
+          <LogOut size={18} />
+          로그아웃
         </button>
       </div>
       {selectedItem && (
